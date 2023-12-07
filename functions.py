@@ -145,3 +145,31 @@ def compare_residuals(res, res0, res1, h):
     ax.set_ylabel('Residual')
     plt.show()
 
+def compare_residuals(res, res0, res1, h):
+    hx = 0.1
+    fig, ax = plt.subplots()
+    ax.plot(res)
+    ax.plot(res0)
+    ax.plot(res1)
+    ax.legend(['PCG $\mu_x = 1$', 'PCG $\mu_x = 0.1$', 'PCG $\mu_x = 0.01$'])
+    ax.set_title('Residuals of PCG')
+    ax.set_yscale('log')
+    ax.set_xlabel('Iteration i')
+    ax.set_ylabel('Residual')
+    plt.show()
+
+def compare_residuals2(rescg, rescg0, rescg1, res, res0, res1, h):
+    hx = 0.1
+    fig, ax = plt.subplots()
+    ax.plot(rescg, linestyle='--')
+    ax.plot(rescg0, linestyle='--')
+    ax.plot(rescg1, linestyle='--')
+    ax.plot(res)
+    ax.plot(res0)
+    ax.plot(res1)
+    ax.legend(['CG $\mu_x = 1$','CG $\mu_x = 0.1$','CG $\mu_x = 0.01$','PCG $\mu_x = 1$', 'PCG $\mu_x = 0.1$', 'PCG $\mu_x = 0.01$'])
+    ax.set_title('Residuals of PCG')
+    ax.set_yscale('log')
+    ax.set_xlabel('Iteration i')
+    ax.set_ylabel('Residual')
+    plt.show()
